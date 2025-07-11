@@ -48,9 +48,10 @@
   }
 
   /* 内容区样式 */
-section {
+  section {
     background: #fff;
-    margin-bottom: 20px;
+    margin: 20px auto; /* 居中显示 */
+    max-width: 800px; /* 限制最大宽度 */
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.05);
@@ -58,16 +59,16 @@ section {
   section h2 {
     font-size: 1.4em;
     color: #0052D9;
-    底边距: 12px;
-    下边框: 2px 固体 #eee;
-    垫底: 6px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 6px;
   }
   p {
     font-size: 1em;
     margin-bottom: 12px;
   }
   ul {
-    左填充: 20px;
+    padding-left: 20px;
     margin: 0;
   }
   li {
@@ -75,185 +76,209 @@ section {
   }
 
   /* 捐款二维码区域（底部） */
-#donate {
+  #donate {
     padding: 20px;
+    margin-top: 20px; /* 与上面 sections 隔开 */
   }
-#donate h2 {
+  #donate h2 {
     text-align: center;
     margin-bottom: 16px;
   }
-#donate div {
+  #donate div {
     text-align: center;
-}
-#donate img {
-    宽度: 200px;
+  }
+  #donate img {
+    width: 200px;
     border-radius: 8px;
-    边境: 1px 固体#ddd；
+    border: 1px solid #ddd;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    cursor: 指针;
-    过渡: transform 0.3s;
-}
-#donate img:hover {
-    transform: 规模(1.05);
-}
-#donate p {
-    上边距: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  #donate img:hover {
+    transform: scale(1.05);
+  }
+  #donate p {
+    margin-top: 10px;
     font-size: 1em;
     color: #333;
-}
+  }
 
-/* 按钮样式 */
-a.button, #downloadBtn {
-    显示: 块;
-    宽度: 100%;
-    最大宽度: 300px;
-    margin: 8px 自动;
+  /* 按钮样式 */
+  a.button, button#downloadBtn { /* 使 button#downloadBtn 也能应用此样式 */
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 8px auto;
     padding: 12px;
-    背景色：#0052D9；
-    颜色：#FFF；
+    background-color: #0052D9;
+    color: #fff;
     text-align: center;
-    边界半径: 8px;
+    border-radius: 8px;
     font-size: 1em;
-    光标: 指针;
-    文字装饰: 没有一个;
+    cursor: pointer;
+    text-decoration: none;
+    border: none; /* 移除 button 默认边框 */
   }
-a.button:盘旋, #downloadBtn:hover {
-    背景色：#003ea0；
+  a.button:hover, button#downloadBtn:hover {
+    background-color: #003ea0;
   }
 
-/* 页脚样式 */
-footer {
+  /* 页脚样式 */
+  footer {
     text-align: center;
     font-size: 0.85em;
     color: #999;
     padding: 16px;
-margin-top:20PX；
+    margin-top: 20px;
   }
 
-/* 小屏适配 */
-@介质(最大宽度：500px){
-表头h1{
-字体大小：1.5他们；
+  /* 小屏适配 */
+  @media(max-width: 500px){
+    header h1 {
+      font-size: 1.5em;
+    }
+    section h2 {
+      font-size: 1.2em;
+    }
+    nav a {
+        font-size: 0.85em;
+        padding: 6px 10px;
+    }
   }
-  section h2 {
-font-size:1.2em；
-  }
-}
 
-/* 悬浮支持按钮样式 */
-#supportBtn{
-  位置: 确定的;
-底部：40px；
-正确的：20px；
-  背景色：#0052D9；
-  颜色：#FFF；
-填料：12px20px；
-边界半径：50px；
-font-size:1em；
-光标: 指针;
-box-shadow:04px12px rgba(0,0,0,0.2);
-过渡：background-color0.3s，改变0.2s；
-Z指数：1000；
-}
-#supportBtn:hover{
-  背景色：#003ea0；
-  改变: 规模(1.05);
-}
+  /* 悬浮支持按钮样式 */
+  #supportBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: #0052D9;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1000;
+    border: none; /* 移除 button 默认边框 */
+  }
+  #supportBtn:hover {
+    background-color: #003ea0;
+    transform: scale(1.05);
+  }
 </style>
-</头>
+</head>
 <body>
 
 <header>
-  <h1>天问-DeepSeek智能对话</h1>
+  <h1>天问 - DeepSeek 智能对话</h1>
   <nav>
-    <a href="#关于">关于我们</a>
-    <a href="#个功能">主要功能</a>
+    <a href="#about">关于我们</a>
+    <a href="#features">主要功能</a>
     <a href="#download">下载安装</a>
     <a href="#webapp" target="_blank">网页版</a>
-    <a href="#联系人">联系方式</a>
+    <a href="#contact">联系方式</a>
   </nav>
 </header>
 
-<! -- 内容部分 -->
-<section id="关于">
+<!-- 内容部分 -->
+<section id="about">
   <h2>关于天问</h2>
-  <p>天问是基于DeepSeek技术打造的智能对话应用，支持多场景个性化定制，带来极致交互体验。非开源，但功能强大且易用。欢迎体验！</p>
+  <p>天问是基于 DeepSeek 技术打造的智能对话应用，支持多场景个性化定制，带来极致交互体验。非开源，但功能强大且易用。欢迎体验！</p>
 </section>
 
-<section id="功能">
+<section id="features">
   <h2>主要功能</h2>
-  <UL>
-<li>支持多轮自然语言对话</li>
-<li>多模型切换与选择</li>
-<li>系统提示自定义</li>
-<li>网页版与本地同步使用</li>
-<li>隐私安全保护</li>
-</ul>
+  <ul>
+    <li>支持多轮自然语言对话</li>
+    <li>多模型切换与选择</li>
+    <li>系统提示自定义</li>
+    <li>网页版与本地同步使用</li>
+    <li>隐私安全保护</li>
+  </ul>
 </section>
 
-<section id="下载">
-<h2>下载安装</h2>
-  <p>更方便的体验方式：直接下载客户端或使用网页版。 操作简单，快来试试吧！</p>
-<! -- 这里加入按钮调用API实现直接下载 -->
-<button id="downloadBtn">立即下载</button>
-<p style="font-size:0.9他们；颜色：#666；字体大小：0.9他们；颜色：#666；">(请手动在文件管理器把rar格式改为apk再安装)</p>
+<section id="download">
+  <h2>下载安装</h2>
+  <p>更方便的体验方式：直接下载客户端或使用网页版。操作简单，快来试试吧！</p>
+  <!-- 这里加入按钮调用API实现直接下载 -->
+  <button id="downloadBtn">立即下载</button>
+  <p style="font-size:0.9em; color:#666;">（请手动在文件管理器把下载的 .rar 文件后缀改为 .apk 再安装）</p>
 </section>
 
 <section id="webapp">
-<h2>网页版体验</h2>
-<p>无需下载，打开浏览器即可体验天问的智能问答，方便快捷.</p>
-  <a 班级="按钮" href="https://b-z.pw/sites/682c83f0c5899_1747747824/index.html" 目标="_空白">前往网页版</a>
+  <h2>网页版体验</h2>
+  <p>无需下载，打开浏览器即可体验天问的智能问答，方便快捷。</p>
+  <a class="button" href="https://b-z.pw/sites/682c83f0c5899_1747747824/index.html" target="_blank">前往网页版</a>
 </section>
 
-<section id="联系人">
-<h2>联系方式</h2>
-  <p>如有疑问或合作，请联系邮箱：<溴/>
-  <a href="mailto:jiayuxuan_2024@qq.com" style="颜色：#0052D9；">jiayuxuan_2024@qq.com</a></p>
+<section id="contact">
+  <h2>联系方式</h2>
+  <p>如有疑问或合作，请联系邮箱：<br/>
+  <a href="mailto:jiayuxuan_2024@qq.com" style="color:#0052D9;">jiayuxuan_2024@qq.com</a></p>
 </section>
 
-<! -- 捐款支持区域（放在底部） -->
-<section id="捐赠">
-  <h2 style="文本对齐：居中；底边距：16px文本对齐：居中；底边距：16px；">捐款支持</h2>
-<div>
+<!-- 捐款支持区域（放在底部） -->
+<section id="donate">
+  <h2 style="text-align:center; margin-bottom:16px;">捐款支持</h2>
+  <div>
     <IMG src="https://static.codemao.cn/bcx/ByGT_Zcblx.png?hash=Fo2RglBu0VAxywl1k6alWi77pAhh" alt="捐款二维码" />
-<p>扫码支持我们，感谢您的帮助！</p>
-</div>
+    <p>扫码支持我们，感谢您的帮助！</p>
+  </div>
 </section>
 
 <! -- 页脚 -->
 <页脚>
 &copy；2024天问&DeepSeek(amp；DeepSeek)。保留所有权利。
-</footer>
+</页脚>
 
 <! -- 悬浮支持按钮 -->
-<button id="supportBtn">支持我们</button>
+<按钮 id="supportBtn">支持我们</button>
 
 <脚本>
 //支付图片点击放大效果已由CSS悬停实现
 
 // 捐款支持按钮点击事件，滚动到支持区域
 文件。getElementById('supportBtn')。addEventListener('click'，函数(){
-文件。getElementById('donit').scrollIntoView({行为：'平滑'})；
-});
+//使用querySelector查找元素，更通用
+Const bitrowsSection=document.querySelector('#bitrows')；
+if(donitusSection){
+donitiveSection.scrollIntoView({行为：'光滑的'})；
+    }
+  });
 
 // 下载安装按钮功能（调用API跳转）
 文件。getElementById('downloadBtn').AddEventListener('click'，函数(){
+//定义API地址和你的蓝奏云链接
 常数apiUrl='https://apis.jxcxin.cn/api/lanzou';
 const lanzouUrl='https://wwwz.lanzout.com/ixhO330oc13e';//你的蓝奏云链接
-fetch('${apiUrl}？URL=${encodeURIComponent(lanzouUrl)}')
-.Then(res=>res.json())
-.then(data=>{
-如果(数据.代码===200&&data.data&&data.数据。URL){
-window.location.href=data.data.url；//跳转直链实现自动下载
-}else{
-alert('获取下载链接失败：'+(data.msg||'未知错误'))；
-      }
-    })
-.catch(err=>{
-alert('请求出错：'+出错)；
-    });
-});
-</script>
 
-</body>
-</html>
+获取("${apiUrl}？URL=${encodeURIComponent(lanzouUrl)}")
+.然后(响应=>{
+// 检查响应是否成功
+if(！response.ok){
+抛出新错误(‘HTTP错误！状态：${response.status}')；
+        }
+return response.json()；
+      })
+.then(data=>{
+// 检查返回的数据结构和状态码
+if(data&&data.代码===200&&data.data&&data.data.url){
+// 跳转到获取到的直链，浏览器通常会直接下载文件
+window.location.href=data.data.url；
+}else{
+// 显示服务器返回的错误信息
+alert('获取下载链接失败：'+(data.msg||'未知错误'))；
+        }
+      })
+.catch(错误=>{
+// 捕获网络请求或解析错误
+console.error('下载请求出错：'，误差)；
+警惕的('请求出错，请稍后重试。 ')；
+      });
+  });
+</脚本>
+
+</身体>
+</超文本标记语言>

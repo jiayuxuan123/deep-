@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>天问 - DeepSeek 智能对话软件</title>
+<style>
+  /* 基础样式 */
+  body {
+    margin: 0;
+    font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f7faff;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  /* 头部样式 */
+  header {
+    background: #ffffff;
+    padding: 20px 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    color: #0052D9;
+  }
+  /* 导航样式 */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  nav a {
+    margin: 6px 12px;
+    padding: 8px 14px;
+    background-color: #0052D9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background 0.3s;
+  }
+  nav a:hover {
+    background-color: #003ea0;
+  }
+
+  /* 内容区样式 */
+section {
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  section h2 {
+    font-size: 1.4em;
+    color: #0052D9;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 6px;
+  }
+  p {
+    font-size: 1em;
+    margin-bottom: 12px;
+  }
+  ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+
+  /* 捐款二维码区域（底部） */
+#donate {
+    padding: 20px;
+  }
+#donate h2 {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+#donate div {
+    text-align: center;
+}
+#donate img {
+    width: 200px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+#donate img:hover {
+    transform: scale(1.05);
+}
+#donate p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+/* 按钮样式 */
+a.button, #downloadBtn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 8px auto;
+    padding: 12px;
+    background-color: #0052D9;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+  }
+a.button:hover, #downloadBtn:hover {
+    background-color: #003ea0;
+  }
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+    padding: 16px;
+    margin-top: 20px;
+  }
+
+/* 小屏适配 */
+@media(max-width: 500px){
+  header h1 {
+    font-size: 1.5em;
+  }
+  section h2 {
+    font-size: 1.2em;
+  }
+}
+
+/* 悬浮支持按钮样式 */
+#supportBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  background-color: #0052D9;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 1000;
+}
+#supportBtn:hover {
+  background-color: #003ea0;
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>天问 - DeepSeek 智能对话</h1>
+  <nav>
+    <a href="#about">关于我们</a>
+    <a href="#features">主要功能</a>
+    <a href="#download">下载安装</a>
+    <a href="#webapp" target="_blank">网页版</a>
+    <a href="#contact">联系方式</a>
+  </nav>
+</header>
+
+<!-- 内容部分 -->
+<section id="about">
+  <h2>关于天问</h2>
+  <p>天问是基于 DeepSeek 技术打造的智能对话应用，支持多场景个性化定制，带来极致交互体验。非开源，但功能强大且易用。欢迎体验！</p>
+</section>
+
+<section id="features">
+  <h2>主要功能</h2>
+  <ul>
+    <li>支持多轮自然语言对话</li>
+    <li>多模型切换与选择</li>
+    <li>系统提示自定义</li>
+    <li>网页版与本地同步使用</li>
+    <li>隐私安全保护</li>
+  </ul>
+</section>
+
+<section id="download">
+  <h2>下载安装</h2>
+  <p>更方便的体验方式：直接下载客户端或使用网页版。操作简单，快来试试吧！</p>
+  <!-- 这里加入按钮调用API实现直接下载 -->
+  <button id="downloadBtn">立即下载</button>
+  <p style="font-size:0.9em; color:#666;">（请使用手机浏览器打开链接下载）</p>
+</section>
+
+<section id="webapp">
+  <h2>网页版体验</h2>
+  <p>无需下载，打开浏览器即可体验天问的智能问答，方便快捷。</p>
+  <a class="button" href="https://b-z.pw/sites/682c83f0c5899_1747747824/index.html" target="_blank">前往网页版</a>
+</section>
+
+<section id="contact">
+  <h2>联系方式</h2>
+  <p>如有疑问或合作，请联系邮箱：<br/>
+  <a href="mailto:jiayuxuan_2024@qq.com" style="color:#0052D9;">jiayuxuan_2024@qq.com</a></p>
+</section>
+
+<!-- 捐款支持区域（放在底部） -->
+<section id="donate">
+  <h2 style="text-align:center; margin-bottom:16px;">捐款支持</h2>
+  <div>
+    <img src="https://static.codemao.cn/bcx/ByGT_Zcblx.png?hash=Fo2RglBu0VAxywl1k6alWi77pAhh" alt="捐款二维码" />
+    <p>扫码支持我们，感谢您的帮助！</p>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  &copy; 2024 天问 &amp; DeepSeek。保留所有权利。
+</footer>
+
+<!-- 悬浮支持按钮 -->
+<button id="supportBtn">支持我们</button>
+
+<script>
+  // 支付图片点击放大效果已由CSS hover实现
+
+  // 捐款支持按钮点击事件，滚动到支持区域
+document.getElementById('supportBtn').addEventListener('click', function() {
+  document.getElementById('donate').scrollIntoView({behavior: 'smooth'});
+});
+
+// 下载安装按钮功能（调用API跳转）
+document.getElementById('downloadBtn').addEventListener('click', function() {
+  const apiUrl = 'https://apis.jxcxin.cn/api/lanzou';
+  const lanzouUrl = 'https://wwwz.lanzout.com/ixhO330oc13e'; // 你的蓝奏云链接
+  fetch(`${apiUrl}?url=${encodeURIComponent(lanzouUrl)}`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.code === 200 && data.data && data.data.url) {
+        window.location.href = data.data.url; // 跳转直链实现自动下载
+      } else {
+        alert('获取下载链接失败：' + (data.msg || '未知错误'));
+      }
+    })
+    .catch(err => {
+      alert('请求出错：' + err);
+    });
+});
+</script>
+
+</body>
+</html>
